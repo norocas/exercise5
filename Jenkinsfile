@@ -5,13 +5,19 @@ pipeline {
             when {
                 branch 'development'
             }
-            echo 'Hello from main branch'
+            steps{
+                sh """
+                    echo 'Hello from main branch'
+                """
         }
         stage('Echo feature branch') {
             when {
                 branch 'feature_x'
             }
-            echo 'Hello from feature branch'
+            steps{
+                sh """
+                    echo 'Hello from feature branch'
+                """
         }
     }
 }
