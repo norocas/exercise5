@@ -11,7 +11,7 @@ pipeline {
             when {
                 branch 'feature_x'
             }
-            echo 'Hello from feature branch'
+            echo 'Hello from feature_x'
         }
     }
 }
