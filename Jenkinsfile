@@ -1,17 +1,29 @@
 pipeline {
-    agent any
+    agent {
+        node {
+            label 'master'
+        }
+    }
     stages {
         stage('Echo main branch') {
             when {
                 branch 'development'
             }
-            echo 'Hello from main branch'
+            steps{
+                sh """
+                    echo 'Hello from main branch'
+                """
+            }
         }
         stage('Echo feature branch') {
             when {
                 branch 'feature_x'
             }
-            echo 'Hello from feature_x'
+            steps{
+                sh """
+                    echo 'Hello from feature branch'
+                """
+            }
         }
     }
 }
