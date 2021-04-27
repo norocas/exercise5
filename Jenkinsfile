@@ -13,6 +13,7 @@ pipeline {
                 sh """
                     echo 'Hello from main branch'
                 """
+            }
         }
         stage('Echo feature branch') {
             when {
@@ -22,6 +23,7 @@ pipeline {
                 sh """
                     echo 'Hello from feature branch'
                 """
+            }
         }
     }
 }
